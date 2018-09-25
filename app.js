@@ -81,6 +81,16 @@ app.put("/blogs/:id", function(req, res){
     })
 })
 
+app.delete("/blogs/:id", function(req, res) {
+    Blog.findByIdAndDelete(req.params.id, function(err){
+        if(err) {
+            console.log("Something went wrong!");
+        } else {
+            res.redirect("/blogs");
+        }
+    })
+})
+
 //listening requests
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Blog is on-line!");

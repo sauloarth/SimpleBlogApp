@@ -12,6 +12,10 @@
             <p><%= blogFound.body %></p>
         </div>
     </div>
+        <a class="ui orange basic button" href="/blogs/<%= blogFound._id %>/edit">Edit</a>
+        <form id="delete-form" action="/blogs/<%= blogFound._id %>?_method=DELETE" method="POST">
+            <button class="ui red basic button">Delete</button>
+        </form>
 
 </div>
 <% include partials/footer %>
