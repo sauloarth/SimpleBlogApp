@@ -48,6 +48,16 @@ app.post("/blogs", function(req, res){
     });
 });
 
+app.get("/blogs/:id", function(req, res) {
+    Blog.findById(req.params.id, function(err, blogFound){
+        if(err) {
+            console.log("Blog could not to be retryved.");
+        } else {
+            console.log(blogFound);
+            res.render("show", {blogFound: blogFound});
+        }
+    })
+})
 
 //listening requests
 app.listen(process.env.PORT, process.env.IP, function(){
