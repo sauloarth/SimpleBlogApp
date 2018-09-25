@@ -1,0 +1,28 @@
+{
+  "name": "simpleblogapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sauloarth/SimpleBlogApp.git"
+  },
+  "keywords": [
+    "blog",
+    "restful",
+    "javascript",
+    "semanticui",
+    "node",
+    "express",
+    "mongo"
+  ],
+  "author": "Saulo Reis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sauloarth/SimpleBlogApp/issues"
+  },
+  "homepage": "https://github.com/sauloarth/SimpleBlogApp#readme"
+}
