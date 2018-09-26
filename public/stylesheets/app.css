@@ -10,3 +10,8 @@ i.icon {
 #delete-form {
     display:inline;
 }
+
+#read-more {
+    font-size: inherit;
+    color: blue;
+}
