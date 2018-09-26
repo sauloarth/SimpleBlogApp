@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
+const sanitizer = require("express-sanitizer");
 
 //app config
 mongoose.connect("mongodb://localhost/simpleblogapp");
@@ -41,6 +42,7 @@ app.get("/blogs/new", function(req, res) {
 });
 
 app.post("/blogs", function(req, res){
+    req.body.blog.body = req.sanitizer(req.body.blog.body);
     Blog.create(req.body.blog, function(err, blogCreated){
         if(err) {
             console.log("Something goes wrong!");
@@ -82,6 +84,7 @@ app.put("/blogs/:id", function(req, res){
 })
 
 app.delete("/blogs/:id", function(req, res) {
+    req.body.blog.body = req.sanitizer(req.body.blog.body);
     Blog.findByIdAndDelete(req.params.id, function(err){
         if(err) {
             console.log("Something went wrong!");
